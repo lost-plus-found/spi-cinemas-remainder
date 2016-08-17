@@ -7,12 +7,13 @@ echo "Please make sure the movie spelling is right using google!"
 echo -n "=> "
 
 read movie
-
+movie2=`echo $movie | tr ' ' '-'`
+movie2=`echo $movie | tr '[:upper:]' '[:lower:]' `
 echo ""
 echo "Please be patient, this may take some moment"
 echo ""
 
-result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie`
+result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie2`
 
 if [ "$result" = "" ]
 then
@@ -21,7 +22,7 @@ then
 	echo ""
 	while [ "$result" = "" ]
 	do
-		result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie`
+		result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie2`
 	done
 	#Remaind him	
 else
