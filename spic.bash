@@ -2,12 +2,11 @@
 
 echo ""
 echo "Hi! Welcome to SPI Cinemas Movie Remainder"
-echo "Type the movie name in capital."
 echo "Please make sure the movie spelling is right using google!"
 echo -n "=> "
 
-read movie
-
+read mov
+movie=`echo $movie | tr '[:lower:]' '[:upper:]'`
 echo ""
 echo "Please be patient, this may take some moment"
 echo ""
@@ -23,7 +22,7 @@ then
 	do
 		result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep "$movie"`
 	done
-	#Remaind him	
+	#Remaind him using IFTTT
 else
 	echo ""
 	echo "Hey! $USER, the movie, $movie is already showing in SPI Cinemas"
