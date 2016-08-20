@@ -12,7 +12,7 @@ echo ""
 echo "Please be patient, this may take some moment"
 echo ""
 
-result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie`
+result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep "$movie"`
 
 if [ "$result" = "" ]
 then
@@ -21,7 +21,7 @@ then
 	echo ""
 	while [ "$result" = "" ]
 	do
-		result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep $movie`
+		result=`curl -s https://www.spicinemas.in/chennai/now-showing | grep "$movie"`
 	done
 	#Remaind him	
 else
