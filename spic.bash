@@ -6,7 +6,7 @@ echo "Please make sure the movie spelling is right using google!"
 echo -n "=> "
 
 read mov
-movie=`echo $movie | tr '[:lower:]' '[:upper:]'`
+movie=`echo $mov | tr '[:lower:]' '[:upper:]'`
 echo ""
 echo "Please be patient, this may take some moment"
 echo ""
@@ -25,7 +25,7 @@ then
 	#Remaind him using IFTTT
 else
 	echo ""
-	echo "Hey! $USER, the movie, $movie is already showing in SPI Cinemas"
+	echo "Hey! $USER, $movie is already showing in SPI Cinemas"
 	echo "Check it out here, https://www.spicinemas.in/chennai/now-showing/"
 	echo ""
 fi
