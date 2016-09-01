@@ -20,5 +20,7 @@ key=`cat c1.txt | grep spi | awk '{print$7}'`
 
 cookie="visited=1; cityName=chennai; spi.session.key=$key; spi_access_token=$token;"
 
+curl -s -b "$cookie" https://www.spicinemas.in/user/profile > profile.html
+
 rm *.txt
 

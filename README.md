@@ -1,1 +1,1 @@
-## SPI Cinemas Movie Remainder
+## SPI Cinemas Movie Reminder
